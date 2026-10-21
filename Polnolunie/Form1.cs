@@ -26,7 +26,6 @@ namespace Polnolunie
                 return;
             }
 
-            // Подключение точно как в нашем первом успешном тесте
             string connStr = "Server=141.8.192.217;Database=upl02_hostel;Uid=upl02_hostel;Pwd=Vhod1941;";
 
             try
@@ -46,9 +45,13 @@ namespace Polnolunie
                         if (result != null)
                         {
                             string role = result.ToString();
-                            MessageBox.Show($"Успешный вход! Ваша роль: {role}", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // Здесь позже мы будем открывать разные формы в зависимости от роли
+                            // Открываем главное меню
+                            MainForm mainForm = new MainForm();
+                            mainForm.Show();
+
+                            // Скрываем форму авторизации
+                            this.Hide();
                         }
                         else
                         {
