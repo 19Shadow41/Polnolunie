@@ -9,20 +9,18 @@ namespace Polnolunie
         {
             InitializeComponent();
             this.buttonRooms.Click += new System.EventHandler(this.buttonRooms_Click);
-            this.buttonBookings.Click += new System.EventHandler(this.buttonBookings_Click); // Новая строка
+            this.buttonBookings.Click += new System.EventHandler(this.buttonBookings_Click);
+            this.buttonReports.Click += new System.EventHandler(this.buttonReports_Click); // Новая строка
         }
 
-        private void buttonRooms_Click(object sender, EventArgs e)
-        {
-            RoomsForm roomsForm = new RoomsForm();
-            roomsForm.ShowDialog();
-        }
+        private void buttonRooms_Click(object sender, EventArgs e) { new RoomsForm().ShowDialog(); }
+        private void buttonBookings_Click(object sender, EventArgs e) { new BookingsForm().ShowDialog(); }
 
-        // Новый метод для кнопки броней
-        private void buttonBookings_Click(object sender, EventArgs e)
+        // Новый метод
+        private void buttonReports_Click(object sender, EventArgs e)
         {
-            BookingsForm bookingsForm = new BookingsForm();
-            bookingsForm.ShowDialog();
+            ReportsForm reportsForm = new ReportsForm();
+            reportsForm.ShowDialog();
         }
     }
 }
