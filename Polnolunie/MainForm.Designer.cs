@@ -6,14 +6,9 @@
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
+            if (disposing && (components != null)) { components.Dispose(); }
             base.Dispose(disposing);
         }
-
-        #region Windows Form Designer generated code
 
         private void InitializeComponent()
         {
@@ -25,13 +20,14 @@
             // 
             // labelWelcome
             // 
-            labelWelcome.AutoSize = true;
-            labelWelcome.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            labelWelcome.Location = new Point(700, 200);
+            labelWelcome.Font = new Font("Segoe UI", 28F, FontStyle.Bold, GraphicsUnit.Point);
+            labelWelcome.ForeColor = Color.White;
+            labelWelcome.Location = new Point(0, 200);
             labelWelcome.Name = "labelWelcome";
-            labelWelcome.Size = new Size(500, 45);
+            labelWelcome.Size = new Size(1920, 50);
             labelWelcome.TabIndex = 0;
             labelWelcome.Text = "Главное меню";
+            labelWelcome.TextAlign = ContentAlignment.MiddleCenter; // Центрируем текст!
             // 
             // buttonBookings
             // 
@@ -41,7 +37,8 @@
             buttonBookings.Size = new Size(400, 60);
             buttonBookings.TabIndex = 1;
             buttonBookings.Text = "Управление бронями";
-            buttonBookings.UseVisualStyleBackColor = true;
+            buttonBookings.UseVisualStyleBackColor = false;
+            buttonBookings.BackColor = Color.White;
             // 
             // buttonRooms
             // 
@@ -51,7 +48,8 @@
             buttonRooms.Size = new Size(400, 60);
             buttonRooms.TabIndex = 2;
             buttonRooms.Text = "Управление номерами";
-            buttonRooms.UseVisualStyleBackColor = true;
+            buttonRooms.UseVisualStyleBackColor = false;
+            buttonRooms.BackColor = Color.White;
             // 
             // buttonReports
             // 
@@ -61,12 +59,14 @@
             buttonReports.Size = new Size(400, 60);
             buttonReports.TabIndex = 3;
             buttonReports.Text = "Отчеты (Выручка и Рейтинг)";
-            buttonReports.UseVisualStyleBackColor = true;
+            buttonReports.UseVisualStyleBackColor = false;
+            buttonReports.BackColor = Color.White;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(41, 53, 65);
             ClientSize = new Size(1920, 1080);
             Controls.Add(buttonReports);
             Controls.Add(buttonRooms);
@@ -76,10 +76,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Полнолуние - Главное меню";
             ResumeLayout(false);
-            PerformLayout();
         }
-
-        #endregion
 
         private Label labelWelcome;
         private Button buttonBookings;

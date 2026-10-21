@@ -46,11 +46,10 @@ namespace Polnolunie
                         {
                             string role = result.ToString();
 
-                            // Открываем главное меню
-                            MainForm mainForm = new MainForm();
+                            // Передаем роль в главное меню
+                            MainForm mainForm = new MainForm(role);
                             mainForm.Show();
 
-                            // Скрываем форму авторизации
                             this.Hide();
                         }
                         else

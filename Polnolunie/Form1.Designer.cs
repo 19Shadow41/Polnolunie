@@ -2,30 +2,14 @@
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
+            if (disposing && (components != null)) { components.Dispose(); }
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             labelTitle = new Label();
@@ -38,19 +22,21 @@
             // 
             // labelTitle
             // 
-            labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTitle.Location = new Point(760, 350);
+            labelTitle.ForeColor = Color.White;
+            labelTitle.Location = new Point(0, 300);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(400, 45);
+            labelTitle.Size = new Size(1920, 50);
             labelTitle.TabIndex = 0;
             labelTitle.Text = "Вход в систему \"Полнолуние\"";
+            labelTitle.TextAlign = ContentAlignment.MiddleCenter; // Центрируем текст внутри метки
             // 
             // labelLogin
             // 
             labelLogin.AutoSize = true;
             labelLogin.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelLogin.Location = new Point(760, 450);
+            labelLogin.ForeColor = Color.White;
+            labelLogin.Location = new Point(710, 420);
             labelLogin.Name = "labelLogin";
             labelLogin.Size = new Size(69, 25);
             labelLogin.TabIndex = 1;
@@ -59,16 +45,17 @@
             // txtLogin
             // 
             txtLogin.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            txtLogin.Location = new Point(760, 480);
+            txtLogin.Location = new Point(710, 450);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(400, 32);
+            txtLogin.Size = new Size(500, 32);
             txtLogin.TabIndex = 2;
             // 
             // labelPassword
             // 
             labelPassword.AutoSize = true;
             labelPassword.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPassword.Location = new Point(760, 530);
+            labelPassword.ForeColor = Color.White;
+            labelPassword.Location = new Point(710, 500);
             labelPassword.Name = "labelPassword";
             labelPassword.Size = new Size(80, 25);
             labelPassword.TabIndex = 3;
@@ -77,18 +64,18 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(760, 560);
+            txtPassword.Location = new Point(710, 530);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(400, 32);
+            txtPassword.Size = new Size(500, 32);
             txtPassword.TabIndex = 4;
-            txtPassword.UseSystemPasswordChar = true; // Скрывает пароль точками
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // buttonLogin
             // 
             buttonLogin.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonLogin.Location = new Point(860, 630);
+            buttonLogin.Location = new Point(810, 600);
             buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(200, 50);
+            buttonLogin.Size = new Size(300, 50);
             buttonLogin.TabIndex = 5;
             buttonLogin.Text = "Войти";
             buttonLogin.UseVisualStyleBackColor = true;
@@ -98,6 +85,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(41, 53, 65);
             ClientSize = new Size(1920, 1080);
             Controls.Add(buttonLogin);
             Controls.Add(txtPassword);
@@ -112,8 +100,6 @@
             ResumeLayout(false);
             PerformLayout();
         }
-
-        #endregion
 
         private Label labelTitle;
         private Label labelLogin;
