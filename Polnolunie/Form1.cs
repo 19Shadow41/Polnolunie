@@ -15,27 +15,51 @@ namespace Polnolunie
         {
         }
 
-        //Подключение к БД с внеш. источника (SprintHost)
-        private void buttonTest_Click(object sender, EventArgs e)
+        private void buttonLogin_Click(object sender, EventArgs e)
         {
-            string server = "141.8.192.217";
-            string database = "upl02_hostel";
-            string uid = "upl02_hostel";
-            string password = "Elcapulco1941!";
+            string login = txtLogin.Text.Trim();
+            string password = txtPassword.Text.Trim();
 
-            string connStr = $"Server={server};Database={database};Uid={uid};Pwd={password};";
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Введите логин и пароль!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Подключение точно как в нашем первом успешном тесте
+            string connStr = "Server=141.8.192.217;Database=upl02_hostel;Uid=upl02_hostel;Pwd=Vhod1941;";
 
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
-                    MessageBox.Show("Подключение успешно!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    string query = "SELECT role FROM users WHERE login = @login AND password_hash = @password";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@login", login);
+                        cmd.Parameters.AddWithValue("@password", password);
+
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            string role = result.ToString();
+                            MessageBox.Show($"Успешный вход! Ваша роль: {role}", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Здесь позже мы будем открывать разные формы в зависимости от роли
+                        }
+                        else
+                        {
+                            MessageBox.Show("Неверный логин или пароль.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ошибка БД: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
