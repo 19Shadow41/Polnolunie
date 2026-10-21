@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            buttonTest = new Button();
+            SuspendLayout();
+            // 
+            // buttonTest
+            // 
+            buttonTest.Location = new Point(885, 515);
+            buttonTest.Name = "buttonTest";
+            buttonTest.Size = new Size(150, 50);
+            buttonTest.TabIndex = 0;
+            buttonTest.Text = "Проверить БД";
+            buttonTest.UseVisualStyleBackColor = true;
+            buttonTest.Click += buttonTest_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1920, 1080);
+            Controls.Add(buttonTest);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Form1";
+            Load += Form1_Load;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button buttonTest;
     }
 }
